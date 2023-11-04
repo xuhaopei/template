@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageJson = require('./package.json');
+const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
     entry: path.resolve(__dirname, './src/main'),
     output: {
@@ -18,22 +19,12 @@ module.exports = {
                 exclude: /node_modules/ // 不编译node_modules下的文件
             },
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-            {
                 test: /\.less$/,
                 use: [
                     'style-loader',
                     'css-loader',
+                    'postcss-loader',
                     'less-loader',
-                    {
-                        loader: 'style-resources-loader',
-                        options: {
-                            patterns: path.resolve(__dirname, './src/style/variables.less'),
-                            injector: 'append'
-                        }
-                    }
                 ]
             },
             {
@@ -54,6 +45,11 @@ module.exports = {
             backgroundColor:packageJson.pageInfo.backgroundColor,
             script1:`<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>`,
             script2:`<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>`,
+        }),
+        new CopyPlugin({
+            patterns: [
+              { from: "public", to: "." }, // 将public里面的文件也打包进dist文件夹
+            ],
         }),
     ],
     resolve: {
