@@ -1,10 +1,14 @@
 import * as React from 'react'
 import cs from './index.module.less' // 使用 .module.less 可以实现css的样式隔离
+import { getUserInfo } from '@/apis/user'
 interface Props {
 }
 interface State {
 }
 export default (props:Props) => {
-  return <div className={cs.hello}>hello</div>
+  const getData = () => {
+    getUserInfo({a: 1})
+  }
+  return <div className={cs.hello} onClick={getData}>hello</div>
 }
 

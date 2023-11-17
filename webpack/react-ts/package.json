@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env publicPath=. webpack --config ./webpack.config.build.js",
-    "dev": "cross-env DOMAIN=qa webpack serve --config ./webpack.config.dev.js"
+    "dev": "cross-env DOMAIN=qa webpack serve --config ./webpack.config.dev.js",
+    "analyze": "cross-env DOMAIN=qa webpack  --config ./webpack.config.analyze.js"
   },
   "pageInfo": {
     "title": "react-ts",
@@ -40,6 +41,7 @@
     "style-resources-loader": "^1.5.0",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.10.0"
