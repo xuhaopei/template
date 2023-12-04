@@ -22,7 +22,14 @@ module.exports = {
                 test: /\.less$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                      loader: 'css-loader',
+                      options: {
+                        modules: {
+                          localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                        },
+                      },
+                    },
                     'postcss-loader',
                     'less-loader',
                 ]
@@ -43,12 +50,12 @@ module.exports = {
             template: path.resolve(__dirname, './index.html'),
             title:packageJson.pageInfo.title,
             backgroundColor:packageJson.pageInfo.backgroundColor,
-            script1:`<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>`,
-            script2:`<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>`,
+            script1:`<script crossorigin src="/public/react@18.2.0/react.development.js"></script>`,
+            script2:`<script crossorigin src="/public/react@18.2.0/react-dom.development.js"></script>`,
         }),
         new CopyPlugin({
             patterns: [
-              { from: "public", to: "." }, // 将public里面的文件也打包进dist文件夹
+              { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
             ],
         }),
     ],

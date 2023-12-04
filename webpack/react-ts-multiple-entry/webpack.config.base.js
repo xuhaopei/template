@@ -35,24 +35,6 @@ module.exports = {
         new DefinePlugin({
             'process.env.DOMAIN': JSON.stringify(process.env.DOMAIN),
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'pages/home.html',
-        //     chunks: ['home'],
-        //     template: path.resolve(__dirname, './index.html'),
-        //     title:packageJson.pageInfo.title,
-        //     backgroundColor:packageJson.pageInfo.backgroundColor,
-        //     script1:`<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>`,
-        //     script2:`<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>`,
-        // }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'pages/main.html',
-        //     chunks: ['main'],
-        //     template: path.resolve(__dirname, './index.html'),
-        //     title:packageJson.pageInfo.title,
-        //     backgroundColor:packageJson.pageInfo.backgroundColor,
-        //     script1:`<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>`,
-        //     script2:`<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>`,
-        // }),
         ...pagesConfig.htmlWebpackPlugins,
         new CopyPlugin({
             patterns: [
