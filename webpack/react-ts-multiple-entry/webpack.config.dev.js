@@ -1,8 +1,11 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const webpackBase = require('./webpack.config.base.js');
+const { CustomBuildLogPlugin } = require('./plugins/index')
+const {devServerProxy} = require('./pages.config')
 module.exports = merge(webpackBase, {
     mode: 'development',
+    stats: 'errors-only',
     devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -14,8 +17,10 @@ module.exports = merge(webpackBase, {
         },
         compress: true,
         port: 9000,
+        proxy: devServerProxy,
     },
     plugins: [
+        new CustomBuildLogPlugin()
     ],
 })
 

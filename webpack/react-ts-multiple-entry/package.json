@@ -5,15 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env publicPath=. webpack --config ./webpack.config.build.js",
-    "dev": "cross-env DOMAIN=qa webpack serve --config ./webpack.config.dev.js"
+    "build": "cross-env domain=online publicPath=./ webpack --config ./webpack.config.build.js",
+    "start": "cross-env domain=dev webpack serve --config ./webpack.config.dev.js",
+    "qa": "cross-env domain=qa webpack serve --config ./webpack.config.dev.js"
   },
   "pageInfo": {
-    "title": "react-ts",
-    "description": "测试",
-    "backgroundColor": "",
-    "imgUrl": "https://boss-images.hitup.cn/boss/23811b6fdf0446c393d7bee8888e5c67.jpg",
-    "type": "react-csr"
+    "title": "react-ts"
   },
   "author": "",
   "license": "ISC",

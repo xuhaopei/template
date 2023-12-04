@@ -6,7 +6,7 @@ interface Props {
 interface State {
 }
 export default (props: Props) => {
-  return <div className={cs.hello}>
+  return <div className={cs.wrapper}>
     <Hello title={'hello11'}></Hello>
   </div>
 }

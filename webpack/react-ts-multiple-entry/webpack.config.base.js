@@ -1,8 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const packageJson = require('./package.json');
 const CopyPlugin = require("copy-webpack-plugin");
 const pagesConfig = require('./pages.config')
 module.exports = {
@@ -15,10 +13,24 @@ module.exports = {
                 exclude: /node_modules/ // 不编译node_modules下的文件
             },
             {
-                test: /\.less$/,
+                test: /\.css$/,
                 use: [
                     'style-loader',
                     'css-loader',
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    {
+                      loader: 'css-loader',
+                      options: {
+                        modules: {
+                          localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                        },
+                      },
+                    },
                     'postcss-loader',
                     'less-loader',
                 ]
@@ -33,12 +45,12 @@ module.exports = {
         new CleanWebpackPlugin(),
         // 将node的环境变量注入到浏览器的环境变量中
         new DefinePlugin({
-            'process.env.DOMAIN': JSON.stringify(process.env.DOMAIN),
+            'process.env.domain': JSON.stringify(process.env.domain),
         }),
         ...pagesConfig.htmlWebpackPlugins,
         new CopyPlugin({
             patterns: [
-              { from: "public", to: "." }, // 将public里面的文件也打包进dist文件夹
+              { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
             ],
         }),
     ],
