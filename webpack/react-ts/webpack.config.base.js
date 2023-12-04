@@ -44,7 +44,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         // 将node的环境变量注入到浏览器的环境变量中
         new DefinePlugin({
-            'process.env.DOMAIN': JSON.stringify(process.env.DOMAIN),
+            'process.env.domain': JSON.stringify(process.env.domain),
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './index.html'),

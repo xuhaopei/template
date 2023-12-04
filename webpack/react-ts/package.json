@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env publicPath=./ webpack --config ./webpack.config.build.js",
-    "start": "cross-env DOMAIN=qa webpack serve --config ./webpack.config.dev.js",
-    "analyze": "cross-env DOMAIN=qa webpack  --config ./webpack.config.analyze.js"
+    "build": "cross-env domain=online  publicPath=./ webpack --config ./webpack.config.build.js",
+    "start": "cross-env domain=qa webpack serve --config ./webpack.config.dev.js",
+    "analyze": "cross-env domain=qa webpack  --config ./webpack.config.analyze.js"
   },
   "pageInfo": {
     "title": "react-ts",
