@@ -68,7 +68,8 @@ module.exports = {
         port: 9000,
     },
     externals:{
-        'react':'React',
+        react: 'React',             // react 代表 包名， `React`代表全局变量名
+        'react-dom': 'ReactDOM',
     }
 }
 
