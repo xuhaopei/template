@@ -1,7 +1,15 @@
+import {
+    HOST_ONLINE,
+    HOST_TEST,
+    HOST_CURR,
+    SERVICE_ONLINE,
+    SERVICE_TEST,
+    SERVICE_DEV
+} from '../../constants'
 const domain = {
-    dev:'https://testservice.hotlive.mx',
-    qa:'https://testservice.hotlive.mx',
-    online:'https://service.hotlive.mx',
+    dev: SERVICE_DEV,
+    qa: SERVICE_TEST,
+    online: SERVICE_ONLINE,
 }
 module.exports = {
     domain,
@@ -17,6 +25,9 @@ module.exports = {
         scripts: [
             `<script crossorigin src="/public/react@18.2.0/react.development.js"></script>`,
             `<script crossorigin src="/public/react@18.2.0/react-dom.development.js"></script>`,
+        ],
+        links: [
+            
         ]
     }
 }

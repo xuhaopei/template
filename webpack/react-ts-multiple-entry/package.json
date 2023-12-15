@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env domain=online publicPath=./ webpack --config ./webpack.config.build.js",
+    "build": "cross-env publicPath=./ webpack --config ./webpack.config.build.js",
     "start": "cross-env domain=dev webpack serve --config ./webpack.config.dev.js",
-    "qa": "cross-env domain=qa webpack serve --config ./webpack.config.dev.js"
+    "qa": "cross-env domain=qa webpack serve --config ./webpack.config.dev.js",
+    "online": "cross-env domain=online webpack serve --config ./webpack.config.dev.js"
   },
   "pageInfo": {
     "title": "react-ts"
@@ -43,6 +44,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "antd-mobile": "^5.33.1",
     "react": "17.0.0",
     "react-dom": "17.0.0"
   }
