@@ -1,15 +1,8 @@
-import {
-    HOST_ONLINE,
-    HOST_TEST,
-    HOST_CURR,
-    SERVICE_ONLINE,
-    SERVICE_TEST,
-    SERVICE_DEV
-} from '../../constants'
+// 接口代理的域名：
 const domain = {
-    dev: SERVICE_DEV,
-    qa: SERVICE_TEST,
-    online: SERVICE_ONLINE,
+    dev:'https://testservice.hotlive.mx',
+    qa:'https://testservice.hotlive.mx',
+    online:'https://service.hotlive.mx',
 }
 module.exports = {
     domain,

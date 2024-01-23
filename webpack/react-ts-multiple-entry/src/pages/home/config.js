@@ -17,6 +17,9 @@ module.exports = {
         scripts: [
             `<script crossorigin src="/public/react@18.2.0/react.development.js"></script>`,
             `<script crossorigin src="/public/react@18.2.0/react-dom.development.js"></script>`,
+        ],
+        links: [
+            
         ]
     }
 }
