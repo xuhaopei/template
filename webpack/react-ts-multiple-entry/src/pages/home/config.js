@@ -1,17 +1,17 @@
-const domain = {
-    dev:'https://testservice.hotlive.mx',
-    qa:'https://testservice.hotlive.mx',
-    online:'https://service.hotlive.mx',
+// 代理的域名：
+const proxy = {
+    '/api/v1/*': {
+        // target: `https://service.hotlive.mx`,
+        target: `https://testservice.hotlive.mx`,
+        secure: false,
+    }
 }
+// 入口文件
+const entry = 'pages/home'
+
 module.exports = {
-    domain,
-    entry: 'pages/home',
-    proxy: {
-        '/api/v1/*': {
-            target: `${domain[process.env.domain]}`,
-            secure: false,
-        }
-    },
+    entry,
+    proxy,
     html: {
         title:'home',
         scripts: [

@@ -1,26 +1,37 @@
 import axios from 'axios'
 import { query } from '@/util';
-import {
+import { 
+    CV,
     HOST_ONLINE,
     HOST_TEST,
-    HOST_DEV,
     HOST_CURR,
-    SERVICE_ONLINE,
-    SERVICE_TEST,
-    SERVICE_DEV
-} from '@/constants';
-import { Toast } from 'antd-mobile'
-const baseURLMap = {
-    [HOST_DEV]: SERVICE_DEV,
-    [HOST_TEST]: SERVICE_TEST,
-    [HOST_ONLINE]: SERVICE_ONLINE,
+    API_ONLINE,
+    API_TEST,
+} from 'src/constants/index'
+// 接口的域名：
+const domain = {
+    [HOST_TEST]: `https://${API_TEST}`,
+    [HOST_ONLINE]: `https://${API_ONLINE}`,
 }
 const instance = axios.create({
-    baseURL: process.env.domain ? `` : `${baseURLMap[HOST_CURR]}`,
+    baseURL: domain[HOST_CURR] || '',
     timeout: 15000,
 });
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {
+    // 基本的原子参数
+    const baseAtom = {
+        cv: CV,
+        sid:'',
+        uid: '',
+    }
+    try {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+        baseAtom.sid = userInfo.sid
+        baseAtom.uid = userInfo.uid
+    } catch (error) {
+        
+    }
     // 在发送请求之前做些什么
     config.params = {
         ...query,
@@ -35,8 +46,9 @@ instance.interceptors.request.use(function (config) {
 // 添加响应拦截器
 instance.interceptors.response.use(function (response) {
     // 对响应数据做点什么
-    if (response.data.code != 0) {
-        Toast.show(response.data.message)
+    let { code, message } = response.data
+    if (code != 0) {
+        return Promise.reject(response.data);
     }
     return response.data;
 }, function (error) {
