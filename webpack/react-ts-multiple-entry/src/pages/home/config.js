@@ -1,9 +1,17 @@
 // 代理的域名：
+const target = `https://testservice.hotlive.mx`
+// const target = `https://service.hotlive.mx`
 const proxy = {
-    '/api/v1/*': {
-        // target: `https://service.hotlive.mx`,
-        target: `https://testservice.hotlive.mx`,
+    '/api/*': {
+        target,
         secure: false,
+        changeOrigin:true,  // 将拦截到浏览器的请求，将请求中的origin 由本地ip（域名） 改为 目标服务器， 因为有的目标服务器会对这块进行限制。
+        onProxyReq(proxyReq, req, res){},
+        onProxyRes(proxyRes, req, res) { // 获取到target服务器返回的接口信息后进行拦截，这里进行代理信息填写后，再传给“浏览器”
+            proxyRes.headers['x-proxy-by'] = 'local-proxy'
+            proxyRes.headers['x-proxy-target'] = target
+            proxyRes.headers['x-proxy-target-path'] = target + req.url
+        },
     }
 }
 // 入口文件
