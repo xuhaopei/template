@@ -1,0 +1,39 @@
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 999;
+  .content {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #000000;
+    border-radius: 12px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      position: absolute;
+      width: 62px;
+      height: 62px;
+      animation: loading 1s linear 0s infinite;
+    }
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+
+  }
+}

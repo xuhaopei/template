@@ -1,0 +1,58 @@
+{
+  "app": {
+    "name": "Live Messenger"
+  },
+  "login": {
+    "btn_login": "登录",
+    "sms": "获得SMS验证码",
+    "input_phone": "输入手机号",
+    "input_code": "输入SMS验证码",
+    "btnTextRestTime": "s 后重发"
+  },
+  "hour": "小时",
+  "minitue": "分钟",
+  "second": "秒",
+  "back": "返回",
+  "logout": "退出",
+  "cancel": "取消",
+  "confirm": "确认",
+  "sure": "Sure",
+  "welcome": "欢迎来到",
+  "games": "游戏大厅",
+  "push_stream": "推流",
+  "start_streaming": "开启直播",
+  "user_id": "用户ID",
+  "horizon_streaming": "横屏推流",
+  "tip": "提示",
+  "new_msg": "新消息",
+  "streaming": {
+    "info": "基础信息",
+    "data": "直播数据",
+    "duration": "开播时长",
+    "onlines": "在线人数",
+    "submit": "提交",
+    "msg": "公聊消息",
+    "stop": "关闭直播",
+    "copy": "复制",
+    "push_address": "推流地址",
+    "stop_streaming_tip": "确认停止直播？",
+    "server": "推流服务地址",
+    "key": "推流码",
+    "wait_pull": "等待推流",
+    "messageTitle": "直播间公聊"
+  },
+  "game_hall": {
+    "lobby": "游戏大厅",
+    "game_name": "游戏名称",
+    "go_prepare": "返回准备页",
+    "income": "进入大厅"
+  },
+  "publicChat": {
+    "incomeRom" : "进入房间",
+    "send": "送了"
+  },
+  "right": {
+    "not": "您没有权限"
+  },
+  "send": "发送"
+}

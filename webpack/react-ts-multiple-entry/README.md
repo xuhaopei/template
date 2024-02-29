@@ -3,6 +3,12 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-02-29
+1. 新增react store
+2. 多语言
+3. 
+## 2024-02-28
+1. 新增react路由
 ## 2024-02-05
 1. 优化config.js关于proxy的配置信息
 ## 2024-01-25

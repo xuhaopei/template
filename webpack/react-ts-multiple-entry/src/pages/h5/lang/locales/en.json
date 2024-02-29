@@ -1,0 +1,57 @@
+{
+  "app": {
+    "name": "Live Messenger"
+  },
+  "login": {
+    "btn_login": "Login",
+    "sms": "Get SMS Code",
+    "input_phone": "Enter Phone Number",
+    "input_code": "Enter SMS Code",
+    "btnTextRestTime": "s to Resend"
+  },
+  "hour": "Hour(s)",
+  "minitue": "Minitue(s)",
+  "second": "Seconds",
+  "back": "Back",
+  "logout": "Logout",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "sure": "Sure",
+  "welcome": "Welcome",
+  "games": "Games",
+  "push_stream": "Push Streaming",
+  "start_streaming": "Go live",
+  "user_id": "User ID",
+  "horizon_streaming": "Streaming in Horizontal",
+  "tip": "Tip",
+  "new_msg": "New Messages",
+  "streaming": {
+    "info": "Basic Information",
+    "data": "Live Streaming Data",
+    "duration": "Streaming Duration",
+    "onlines": "Viewers",
+    "submit": "Submit",
+    "msg": "Messages",
+    "stop": "Stop Streaming",
+    "copy": "Copy",
+    "push_address": "Push Streaming Address",
+    "stop_streaming_tip": "Do you want to stop streaming？",
+    "server": "Server",
+    "key": "Stream Key",
+    "wait_pull": "Waiting for the Live Stream",
+    "messageTitle": "Live Streaming Chat"
+  },
+  "game_hall": {
+    "lobby": "HotLive Gaming",
+    "game_name": "Game Name",
+    "go_prepare": "Go to prepare page"
+  },
+  "publicChat": {
+    "incomeRom" : "joins room",
+    "send": "Send"
+  },
+  "right": {
+    "not": "You don't have permission"
+  },
+  "send": "Send"
+}

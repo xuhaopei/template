@@ -1,0 +1,268 @@
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 100;
+  input {
+    outline: none;
+    background-color: transparent;
+  }
+  input::placeholder {
+
+  }
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    .half_circle {
+      position: absolute;
+      width: 92px;
+      height: 25px;
+      top: -25px;
+    }
+    .btn_close {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 16px;
+      right: 16px;
+    }
+    .icon {
+      position: relative;
+      width: 74px;
+      height: 74px;
+      margin-top: -19px;
+      margin-bottom: 16px;
+      border-radius: 50%;
+    }
+    .text_tip_title {
+      position: relative;
+      width: 275px;
+      font-size: 26px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(0,0,0,0.4);
+      line-height: 19px;
+      margin-bottom: 19px;
+    }
+    .item {
+      position: relative;
+      width: 400px;
+      height: 60px;
+      background: #F2F2F2;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .inputPhone_left {
+      position: relative;
+      margin-left: 26px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #000000;
+      line-height: 40px;
+      width: 140px;
+    }
+    .inputPhone_triangle {
+      position: relative;
+      margin: 0 10px;
+    }
+    .inputPhone_line {
+      position: relative;
+      margin:0 10px;
+      width: 2px;
+      height: 36px;
+      background: #000000;
+      opacity: 0.1;
+    }
+    .inputPhone_right {
+      position: relative;
+      width: 250px;
+      height: 36px;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      line-height: 40px;
+      color: #000000;
+      font-weight: 600;
+      border: none;
+    }
+    .inputPhone_right::placeholder {
+      font-weight: 400;
+      color: rgba(0,0,0,0.4);
+    }
+    .inputCode_input {
+      position: relative;
+      margin-left: 26px;
+      height: 40px;
+      width: 200px;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 600;
+      color: #000000;
+      line-height: 40px;
+      color: #000000;
+      font-weight: 600;
+      border: none;
+    }
+    .inputCode_input::placeholder {
+      font-weight: 400;
+      color: rgba(0,0,0,0.4);
+    }
+    .inputCode_btn_get {
+      position: absolute;
+      right: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      background: #FF722F;
+      border-radius: 40px;
+      font-size: 14px;
+      line-height: 24px;
+      font-family: PingFangTC-Semibold, PingFangTC;
+      font-weight: 600;
+      color: #FFFFFF;
+      padding:0 12px;
+      cursor: pointer;
+    }
+    .inputCode_btn_restTime {
+      position: absolute;
+      right: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      background: #BFBFBF;
+      border-radius: 40px;
+      font-size: 14px;
+      line-height: 24px;
+      font-family: PingFangTC-Semibold, PingFangTC;
+      font-weight: 600;
+      color: #FFFFFF;
+      padding:0 12px;
+    }
+    .text_tip_login {
+      position: relative;
+      margin-top: 22px;
+      margin-bottom: 50px;
+      width: 400px;
+      height: 40px;
+      background: #FF722F;
+      border-radius: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 28px;
+    }
+    .btn_login {
+      width: 400px;
+      height: 58px;
+      background: #FF722F;
+      border-radius: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .btn_login_gray{
+      border-radius: 44px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .text_tip_login_other {
+      position: relative;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+      .line {
+        position: relative;
+        width: 145px;
+        height: 1px;
+        background: #000000;
+        border-radius: 2px;
+        opacity: 0.1;
+      }
+      .text {
+        position: relative;
+        margin: 0 22px;
+        font-size: 26px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: rgba(0,0,0,0.4);
+        line-height: 34px;
+        text-align: center;
+      }
+    }
+    .btn_login_google {
+      width: 400px;
+      height: 58px;
+      border-radius: 44px;
+      border: 1px solid rgba(0,0,0,0.6);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(0,0,0,0.6);
+      line-height: 28px;
+      position: relative;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 11px;
+      }
+      .btn_google_render {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+      }
+    }
+    .text_tip_terms {
+      width: 503px;
+      font-size: 26px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(0,0,0,0.4);
+      line-height: 34px;
+      margin-bottom: 40px;
+      span {
+        text-decoration: underline;
+        margin-left: 10px;
+      }
+    }
+  }
+  .closeZone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "app": {
+    "name": "Bienvenido a HotLive"
+  },
+  "login": {
+    "btn_login": "Iniciar sesión",
+    "sms": "Recibir SMS",
+    "input_phone": "Número de teléfono",
+    "input_code": "Código de verificación",
+    "btnTextRestTime": "s en Reenviar"
+  },
+  "hour": "Hour(s)",
+  "minitue": "Minitue(s)",
+  "second": "Seconds",
+  "back": "Back",
+  "logout": "Cerrar sesión",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "sure": "Sure",
+  "welcome": "Welcome",
+  "games": "Juego",
+  "push_stream": "Transmisión en vivo mediante empuje",
+  "start_streaming": "Iniciar transmisión en vivo",
+  "user_id": "User ID",
+  "horizon_streaming": "Transmisión en vivo en formato horizontal",
+  "tip": "Tip",
+  "new_msg": "mensaje nuevo",
+  "streaming": {
+    "info": "Información básica",
+    "data": "Situación de los datos",
+    "duration": "Inicio En vivo Duración",
+    "onlines": "Usuarios en línea",
+    "submit": "Submit",
+    "msg": "Messages",
+    "stop": "Cerrar en vivo",
+    "copy": "Copiar",
+    "push_address": "Servidor",
+    "stop_streaming_tip": "Cerrar en vivo？",
+    "server": "Servidor",
+    "key": "Clave de retransmisión",
+    "wait_pull": "Esperando la Transmisión en vivo",
+    "messageTitle": "Chat de transmisión en vivo"
+  },
+  "game_hall": {
+    "lobby": "Juegos HotLive",
+    "game_name": "Game Name",
+    "go_prepare": "Go to prepare page"
+  },
+  "publicChat": {
+    "incomeRom" : "joins room",
+    "send": "Enviar"
+  },
+  "right": {
+    "not": "No tienes permiso"
+  },
+  "send": "Enviar"
+}
+

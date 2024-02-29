@@ -31,8 +31,9 @@ const build = (options = {}) => {
 
 
 // 这里是业务方添加代码使用。
-build(require('./src/pages/home/config')) // 构建页面 home
-build(require('./src/pages/main/config')) // 构建页面 main
+// build(require('./src/pages/home/config')) // 构建页面 home
+// build(require('./src/pages/main/config')) // 构建页面 main
+build(require('./src/pages/h5/config')) // 构建页面 h5
 
 
 module.exports = {

@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env publicPath=./ webpack --config ./webpack.config.build.js",
     "start": "cross-env domain=dev webpack serve --config ./webpack.config.dev.js",
-    "qa": "cross-env domain=qa webpack serve --config ./webpack.config.dev.js",
-    "online": "cross-env domain=online webpack serve --config ./webpack.config.dev.js"
+    "analyze": "cross-env publicPath=./ webpack  --config ./webpack.config.analyze.js"
   },
   "pageInfo": {
     "title": "react-ts"
@@ -44,8 +43,15 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
     "antd-mobile": "^5.33.1",
+    "i18next": "^23.10.0",
+    "i18next-browser-languagedetector": "^7.2.0",
     "react": "17.0.0",
-    "react-dom": "17.0.0"
+    "react-activation": "^0.12.4",
+    "react-dom": "17.0.0",
+    "react-i18next": "^14.0.5",
+    "react-lazy-with-preload": "^2.2.1",
+    "react-router-dom": "^6.22.1"
   }
 }
