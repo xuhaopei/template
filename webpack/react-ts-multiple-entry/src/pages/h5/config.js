@@ -26,10 +26,8 @@ module.exports = {
             `<script crossorigin src="/public/react@18.2.0/react.development.js"></script>`,
             `<script crossorigin src="/public/react@18.2.0/react-dom.development.js"></script>`,
             `<script src="https://accounts.google.com/gsi/client" async></script>`,
-            `<script src="//sf-unpkg.bytepluscdn.com/obj/byteplusfe-sg/sdk/@byteplus/veplayer/1.6.3/index.min.js"></script>`
         ],
         links: [
-            `<link rel="stylesheet" href="//sf-unpkg.bytepluscdn.com/obj/byteplusfe-sg/sdk/@byteplus/veplayer/1.6.3/index.min.css">`,
             `<link id="icon" rel="shortcut icon" href="" />`
         ]
     }
