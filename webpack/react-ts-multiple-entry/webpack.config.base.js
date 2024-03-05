@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const CopyPlugin = require("copy-webpack-plugin");
-const pagesConfig = require('./pages.config')
+const pagesConfig = require('./entrys')
 module.exports = {
     entry: pagesConfig.entries,
     module: {

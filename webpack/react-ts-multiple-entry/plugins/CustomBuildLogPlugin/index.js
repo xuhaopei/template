@@ -1,5 +1,5 @@
 // 自定义构建日志
-const {entries, devServerProxy} = require('../../pages.config')
+const {entries, devServerProxy} = require('../../entrys/index')
 const os = require('os');
 
 function getLocalIP() {
