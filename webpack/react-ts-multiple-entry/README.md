@@ -3,6 +3,8 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2-24-03-05
+1. 支持scss文件
 ## 2024-02-29
 1. 新增react store
 2. 多语言

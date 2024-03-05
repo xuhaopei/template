@@ -36,6 +36,22 @@ module.exports = {
                 ]
             },
             {
+                test: /\.s[ac]ss$/,
+                use: [
+                    'style-loader',
+                    {
+                      loader: 'css-loader',
+                      options: {
+                        modules: {
+                          localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                        },
+                      },
+                    },
+                    'postcss-loader',
+                    'sass-loader',
+                ]
+            },
+            {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
