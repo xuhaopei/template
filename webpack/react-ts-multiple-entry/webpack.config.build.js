@@ -6,6 +6,6 @@ module.exports = merge(webpackBase, {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '../../',
-        filename: '[name]/static/bundle.[fullhash].js',
+        filename: '[name].[contenthash].js',
     },
 })

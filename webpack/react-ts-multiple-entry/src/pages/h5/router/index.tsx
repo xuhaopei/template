@@ -2,28 +2,15 @@ import React, { useEffect, useMemo, useContext, useCallback } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import KeepAlive from "react-activation";
 import { lazyWithPreload } from "react-lazy-with-preload"; // 预加载组件
-const Preview = lazyWithPreload(() => import("@/pages/h5/views/Preview/index"));
-const Login = lazyWithPreload(() => import("@/pages/h5/views/Login/index"));
+// 配置webpackChunkName: "[name]" 这个有助于打包后的文件名称生成，没有这个，模块文件的名称默认取id。
+const Preview = lazyWithPreload((/* webpackChunkName: "Preview" */ ) => import("@/pages/h5/views/Preview/index"));
+const Login = lazyWithPreload((/* webpackChunkName: "Login" */ ) => import("@/pages/h5/views/Login/index"));
 
-/**
- * routes config
- * The atomic configuration is as follows:
- * path: String,page routing
- * ToDo：
- * allowGuest: Boolean, is allowed guest
- * exact: Boolean, default true, Is it an exact match
- * lazy: Boolean, default true, Whether lazy loading
- * keep: Boolean, default false, Whether to keep the page status, currently there are only four bottom tab pages, that is, four first-level pages remain permanent, too many will affect page performance
- * preload: Boolean.default false, Whether to preload (for routing-level pages), currently four pairs of first-level pages, and some top-level top-level pages (such as event details, recharge) pages are preloaded
- * prerender: Boolean, default false, Whether to pre-render, pre-rendering has a great impact on page performance, temporarily only used for the first-level tab page
- * pageLevel: Number, Page level (primary, secondary...page). How to define page level? The bottom four tab pages are the first level, and the remaining page level = the first level page level + the shortest steps required to enter this page from the first level page
- * pagePriority: Number, Page priority, 1 is the highest priority, and it will be postponed later. For example, the login and recharge pages have the highest priority among all secondary pages.
- */
+
 export const routesConfig = [
   {
     path: "/",
     redirect: "/preview",
-    allowGuest: true,
   },
   {
     path: "/preview",

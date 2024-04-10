@@ -9,7 +9,7 @@ module.exports = merge(webpackBase, {
     devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]/static/bundle.[fullhash].js',
+        filename: '[name].[contenthash].js',
     },
     devServer: {
         static: {
