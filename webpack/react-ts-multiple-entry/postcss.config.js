@@ -26,6 +26,18 @@ module.exports = (api) => {
             },
         }
     }
+    if (/\.less$/.test(api.file)) {
+        return {
+            // https://www.npmjs.com/package/postcss-pxtorem
+            plugins: {
+                'postcss-pxtorem': {
+                    rootValue: 1, // 根元素字体大小，可以根据设计稿设置
+                    propList: ['*'], // 要转换的属性列表，这里表示所有属性都转换
+                    minPixelValue: 2 // 最小的像素值，小于这个值的不会被转换
+                }
+            },
+        }
+    }
     return {
         // You can specify any options from https://postcss.org/api/#processoptions here
         plugins: {}

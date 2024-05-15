@@ -13,7 +13,9 @@ import useEnhancedReducer from "./store/useEnhancedReducer";
 import AllRouters from "./router";
 import BaseLoading from "./components/BaseLoading";
 import { StoreState } from "@/pages/h5/types";
+import useRem from "@/hooks/useRem";
 const App = () => {
+  useRem(1920);
   const [isInit, setIsInit] = useState(false);
   const [state, dispatch] = useEnhancedReducer(reducer, initialState);
   const { isShowLoading } =
