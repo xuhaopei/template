@@ -3,6 +3,8 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-05-15
+1. 设置生产环境下js文件全都放置在dist/static/js/文件夹下
 ## 2024-04-10
 1. 优化postcss.config的配置颗粒度，支持针对scss文件用vw转换，针对其他文件不进行vw的转换。
 2. 优化打包后输出的文件名称。
