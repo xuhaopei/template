@@ -14,11 +14,10 @@ const Login = lazyWithPreload(
   (/* webpackChunkName: "Login" */) => import("@/pages/pc/views/Login/index")
 );
 
-type ExtendsRouteObject =  RouteObject & {
-  children: Array<RouteObject & {
-    preloadlevel?: number
-  }>
-}
+type ExtendsRouteObject = RouteObject & {
+  children?: ExtendsRouteObject[];
+  preloadlevel?: number,
+};
 const hashRouter: Array<ExtendsRouteObject> = [
   {
     path: "/",
