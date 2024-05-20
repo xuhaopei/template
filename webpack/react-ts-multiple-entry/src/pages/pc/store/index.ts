@@ -1,6 +1,6 @@
 import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
-import Apis from '@/pages/h5/apis/user'
+import Apis from '@/pages/pc/apis/user'
 export const Context = React.createContext(null)
 export const initialState = {
     userInfo: {},

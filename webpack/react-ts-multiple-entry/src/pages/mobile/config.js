@@ -15,20 +15,19 @@ const proxy = {
     }
 }
 // 入口文件
-const entry = 'pages/h5'
+const entry = 'pages/mobile'
 
 module.exports = {
     entry,
     proxy,
     html: {
-        title:'Live Messenger',
+        title:'mobile',
         scripts: [
             `<script crossorigin src="/public/react@18.2.0/react.development.js"></script>`,
             `<script crossorigin src="/public/react@18.2.0/react-dom.development.js"></script>`,
-            `<script src="https://accounts.google.com/gsi/client" async></script>`,
         ],
         links: [
-            `<link id="icon" rel="shortcut icon" href="" />`
+            
         ]
     }
 }

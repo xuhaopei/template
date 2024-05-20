@@ -2,23 +2,22 @@ import React, {
     useEffect,
 } from "react";
 // 动态计算rem
-export default (desginW = 1920) => {
+export default (desginW = 1920, minimumDesginW = 300) => {
+    console.log('desginW', 1920)
+    console.log('minimumDesginW', minimumDesginW)
     useEffect(() => {
         const changeSize = () => {
             const innerWidth = window.innerWidth;
-            const minimum = 1534; // pc最低宽度要求
 
-            let pcWidth = innerWidth < minimum ? minimum : innerWidth;
-            if (innerWidth < minimum) {
-                pcWidth = minimum;
+            let pcWidth = innerWidth < minimumDesginW ? minimumDesginW : innerWidth;
+            if (innerWidth < minimumDesginW) {
+                pcWidth = minimumDesginW;
             } else if (innerWidth > 1920) {
                 pcWidth = 1920;
             } else {
                 pcWidth = innerWidth;
             }
-            console.log("desginW", desginW);
             const rem = pcWidth / desginW;
-
             document.documentElement.style.fontSize = `${rem}px`;
         };
         window.addEventListener("resize", changeSize, false);
