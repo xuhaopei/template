@@ -3,7 +3,17 @@ pnpm i
 npm run start
 
 # 更新日志
-## 2-24-03-05
+## 2024-05-17
+1. 优化目录结构，pc目录为适配rem，mobile为适配vw
+2. 通过扩张hashRouter的属性，支持了通过在hashRouter配置preloadLevel达到组件预加载的效果。
+## 2024-05-15
+1. 设置生产环境下js文件全都放置在dist/static/js/文件夹下
+2. 加入postcss-pxtorem与全局hooks，针对less文件将其px转成rem
+## 2024-04-10
+1. 优化postcss.config的配置颗粒度，支持针对scss文件用vw转换，针对其他文件不进行vw的转换。
+2. 优化打包后输出的文件名称。
+3. 添加一个模板组件，规范api、图片与组件的源码都在同一个目录下，这么做的目的是方便为了代码的复用。
+## 2024-03-05
 1. 支持sass文件
 2. 修改入口文件为entrys/index
 ## 2024-02-29

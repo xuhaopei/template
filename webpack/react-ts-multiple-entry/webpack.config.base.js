@@ -1,8 +1,9 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { DefinePlugin } = require('webpack');
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { DefinePlugin } = require('webpack')
+const CopyPlugin = require("copy-webpack-plugin")
 const pagesConfig = require('./entrys')
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
 module.exports = {
     entry: pagesConfig.entries,
     module: {
@@ -24,12 +25,12 @@ module.exports = {
                 use: [
                     'style-loader',
                     {
-                      loader: 'css-loader',
-                      options: {
-                        modules: {
-                          localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                            },
                         },
-                      },
                     },
                     'postcss-loader',
                     'less-loader',
@@ -40,12 +41,12 @@ module.exports = {
                 use: [
                     'style-loader',
                     {
-                      loader: 'css-loader',
-                      options: {
-                        modules: {
-                          localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[folder]_[local]_[hash:base64:5]', // 设置样式隔离后css的文件名称，参考这个:https://webpack.docschina.org/loaders/css-loader/#root
+                            },
                         },
-                      },
                     },
                     'postcss-loader',
                     'sass-loader',
@@ -66,16 +67,24 @@ module.exports = {
         ...pagesConfig.htmlWebpackPlugins,
         new CopyPlugin({
             patterns: [
-              { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
+                { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
             ],
         }),
+        new GenerateSW({
+            clientsClaim: true, // 快速启用服务
+            skipWaiting: true,
+            maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
+        }),
+        //new InjectManifest({
+          //  maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
+        //})
     ],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
             'src': path.resolve(__dirname, './src'),
         },
-        extensions: ['.tsx','.jsx','.ts', '.js'],
+        extensions: ['.tsx', '.jsx', '.ts', '.js'],
     },
     devServer: {
         static: {
@@ -84,7 +93,7 @@ module.exports = {
         compress: true,
         port: 9000,
     },
-    externals:{
+    externals: {
         react: 'React',             // react 代表 包名， `React`代表全局变量名
         'react-dom': 'ReactDOM',
     }
