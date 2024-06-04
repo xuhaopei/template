@@ -67,17 +67,18 @@ module.exports = {
         ...pagesConfig.htmlWebpackPlugins,
         new CopyPlugin({
             patterns: [
-                { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
+              { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
+              { from: "root", to: "."}
             ],
         }),
-        new GenerateSW({
-            clientsClaim: true, // 快速启用服务
-            skipWaiting: true,
-            maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
-        }),
-        //new InjectManifest({
-          //  maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
-        //})
+        // new GenerateSW({
+        //     clientsClaim: true, // 快速启用服务
+        //     skipWaiting: true,
+        //     maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
+        // }),
+        // new InjectManifest({
+        //    maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
+        // })
     ],
     resolve: {
         alias: {
