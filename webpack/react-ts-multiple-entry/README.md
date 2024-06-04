@@ -3,6 +3,8 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-06-04
+1. 新增pwa的安装
 ## 2024-05-17
 1. 优化目录结构，pc目录为适配rem，mobile为适配vw
 2. 通过扩张hashRouter的属性，支持了通过在hashRouter配置preloadLevel达到组件预加载的效果。
