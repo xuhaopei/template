@@ -8,6 +8,7 @@ interface Props {
 interface State {}
 export default () => {
   const handleClick = async () => {
+    if (!window.deferredPrompt) return
     window.deferredPrompt.prompt();
     // Find out whether the user confirmed the installation or not
     const { outcome } = await window.deferredPrompt.userChoice;
@@ -18,6 +19,8 @@ export default () => {
       console.log("User dismissed the install prompt");
     }
   };
+
+  React.useEffect
   return (
     <div className={cs.wrapper}>
       <button onClick={handleClick}>安装pwa</button>

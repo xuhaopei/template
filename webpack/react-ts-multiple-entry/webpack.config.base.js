@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin")
 const pagesConfig = require('./entrys')
-const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
+// const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
 module.exports = {
     entry: pagesConfig.entries,
     module: {
