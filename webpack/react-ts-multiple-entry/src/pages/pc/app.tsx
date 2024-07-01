@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import cs from "./app.module.less";
 import reducer, { Context, initialState, setUserInfo } from "./store";
 import useEnhancedReducer from "./store/useEnhancedReducer";
-import useRem from "@/hooks/useRem";
+import useRem from "src/hooks/useRem";
 const App = () => {
   useRem(1920, 800);
   const [state, dispatch] = useEnhancedReducer(reducer, initialState);

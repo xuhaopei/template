@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cs from './index.module.less' // 使用 .module.less 可以实现css的样式隔离
-import png from '@/assets/game.png'
-import { getUserInfo } from '@/apis/user'
+import png from 'src/assets/game.png'
+import { getUserInfo } from 'src/apis/user'
 interface Props {
 }
 interface State {

@@ -10,7 +10,7 @@ import {
   setIsShowLogin,
 } from "src/pages/pc/store";
 import { StoreContext } from "../../types";
-import ApiUser from "@/pages/pc/apis/user";
+import ApiUser from "src/pages/pc/apis/user";
 import cx from 'classnames'
 interface Props {}
 export default (props: Props) => {

@@ -3,6 +3,10 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-07-01
+1. 打包环境才将serivce worker进行打包，避免开发环境报sw渲染错误。
+2. 将/pages/pc 从 hash路由 改成 history路由，并封装useNavigate，支持切换url的时候url上的参数还在。
+3. 开发环境添加webpack的output配置publicPath为'/'，避免history路由影响。
 ## 2024-06-05
 1. 增加eruda的安装
 2. 增加pwa中清单的安装

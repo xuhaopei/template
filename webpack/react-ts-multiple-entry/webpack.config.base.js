@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin")
 const pagesConfig = require('./entrys')
-// const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
 module.exports = {
     entry: pagesConfig.entries,
     module: {
@@ -71,18 +70,9 @@ module.exports = {
               { from: "root", to: "."}
             ],
         }),
-        // new GenerateSW({
-        //     clientsClaim: true, // 快速启用服务
-        //     skipWaiting: true,
-        //     maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
-        // }),
-        // new InjectManifest({
-        //    maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
-        // })
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './src'),
             'src': path.resolve(__dirname, './src'),
         },
         extensions: ['.tsx', '.jsx', '.ts', '.js'],

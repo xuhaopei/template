@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useContext, useCallback } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import {
   createHashRouter,
+  createBrowserRouter,
   RouterProvider,
   RouteObject,
 } from "react-router-dom";
@@ -12,17 +13,17 @@ import { lazyWithPreload, PreloadableComponent } from "react-lazy-with-preload";
 // 配置webpackChunkName: "[name]" 这个有助于打包后的文件名称生成，没有这个，模块文件的名称默认取id。
 const Preview = lazyWithPreload(
   (/* webpackChunkName: "Preview" */) =>
-    import("@/pages/pc/views/Preview/index")
+    import("src/pages/pc/views/Preview/index")
 );
 const Login = lazyWithPreload(
-  (/* webpackChunkName: "Login" */) => import("@/pages/pc/views/Login/index")
+  (/* webpackChunkName: "Login" */) => import("src/pages/pc/views/Login/index")
 );
 
 type ExtendsRouteObject = RouteObject & {
   children?: ExtendsRouteObject[];
   preloadlevel?: number;
 };
-const hashRouter: Array<ExtendsRouteObject> = [
+const routerList: Array<ExtendsRouteObject> = [
   {
     path: "/",
     element: <App />,
@@ -71,7 +72,7 @@ const hashRouter: Array<ExtendsRouteObject> = [
       }
     });
   };
-  getList(hashRouter);
+  getList(routerList);
   listElemens = listElemens.sort(
     (router1, router2) => router1.preloadlevel - router2.preloadlevel
   );
@@ -81,4 +82,4 @@ const hashRouter: Array<ExtendsRouteObject> = [
     }, index * 1000);
   });
 })();
-export default <RouterProvider router={createHashRouter(hashRouter)} />;
+export default <RouterProvider router={createBrowserRouter(routerList)} />;

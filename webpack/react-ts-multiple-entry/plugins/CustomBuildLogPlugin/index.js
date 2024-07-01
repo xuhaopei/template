@@ -32,7 +32,12 @@ module.exports = class {
           console.log('')
           let keys = Object.keys(entries)
           for (const key of keys) {
-            console.log(`http://${getLocalIP()}:9000/${key}`)
+            // pc不需要，因为这是brower页面
+            if (key.indexOf('pc') >= 0)  {
+              console.log(`http://${getLocalIP()}:9000?op=2`)
+            } else {
+              console.log(`http://${getLocalIP()}:9000/${key}`)
+            }
             console.log('')
           }
 

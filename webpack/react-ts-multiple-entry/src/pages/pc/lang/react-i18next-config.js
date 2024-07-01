@@ -1,7 +1,7 @@
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import i18n from 'i18next'
-import { query } from '@/util/index'
+import { query } from 'src/util/index'
 import { LANGUAGE } from 'src/constants/index'
 export const createResources = (arrLanguage = []) =>
   arrLanguage.reduce(

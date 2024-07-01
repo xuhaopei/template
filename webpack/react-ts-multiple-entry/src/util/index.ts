@@ -1,4 +1,4 @@
-import { Query } from "@/types"
+import { Query } from "src/types"
 
 // 获取url上的原子参数
 export const getQuery = (): Query => {

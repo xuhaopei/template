@@ -1,6 +1,6 @@
 import axios from 'axios'
 // import { message as Message } from 'antd';
-import { query } from '@/util';
+import { query } from 'src/util';
 import {
     CV,
     HOST_ONLINE,

@@ -9,6 +9,7 @@ module.exports = merge(webpackBase, {
     devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         filename: '[name].[contenthash].js',
     },
     devServer: {
@@ -18,6 +19,9 @@ module.exports = merge(webpackBase, {
         compress: true,
         port: 9000,
         proxy: devServerProxy,
+        historyApiFallback: {       // 配置路由上的资源未找到时，则从/pages/h5里面查找资源。 类似nginx 查不到资源则向此路径上的资源获取。
+            index: '/pages/pc'
+        }
     },
     plugins: [
         new CustomBuildLogPlugin()

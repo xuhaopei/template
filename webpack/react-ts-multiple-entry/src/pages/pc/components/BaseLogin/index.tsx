@@ -12,7 +12,7 @@ import cx from "classnames";
 import { useTranslation } from "react-i18next";
 import phoneLimit from "src/constants/phoneLimit";
 import BaseSelectZones from "../BaseSelectZones";
-import ApiUser from "@/pages/pc/apis/user";
+import ApiUser from "src/pages/pc/apis/user";
 import {
   Context,
   accountLogin,

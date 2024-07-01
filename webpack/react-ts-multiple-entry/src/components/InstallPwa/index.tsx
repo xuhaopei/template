@@ -1,6 +1,6 @@
 import * as React from "react";
 import cs from "./index.module.scss"; // 使用 .module.less 可以实现css的样式隔离
-import { ua } from "@/util";
+import { ua } from "src/util";
 
 interface Props {
   title: string;
