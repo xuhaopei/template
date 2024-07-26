@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const webpackBase = require('./webpack.config.base.js');
 const path = require('path');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
+const { ChangeWorkerServiceName } = require('./plugins/index')
 module.exports = merge(webpackBase, {
     mode: 'production',
     output: {
@@ -15,5 +16,6 @@ module.exports = merge(webpackBase, {
             skipWaiting: true,
             maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
         }),
+        new ChangeWorkerServiceName()
     ]
 })

@@ -1,6 +1,6 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { DefinePlugin } = require('webpack')
+const { DefinePlugin, ProgressPlugin } = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin")
 const pagesConfig = require('./entrys')
 module.exports = {
@@ -70,6 +70,10 @@ module.exports = {
               { from: "root", to: "."}
             ],
         }),
+        new ProgressPlugin((percentage, message, ...args) => {
+            console.clear()
+            console.info('构建进度：' + Math.round(percentage * 100) + '%');
+        })
     ],
     resolve: {
         alias: {

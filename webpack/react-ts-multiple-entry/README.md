@@ -3,6 +3,10 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-07-25
+1. 添加打包进度日志
+2. 支持sw打包后生成的文件名更新，避免cdn影响
+3. 更新react，从17 =》 18
 ## 2024-07-01
 1. 打包环境才将serivce worker进行打包，避免开发环境报sw渲染错误。
 2. 将/pages/pc 从 hash路由 改成 history路由，并封装useNavigate，支持切换url的时候url上的参数还在。
