@@ -3,6 +3,8 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-08-12
+1. 引入纯的react-redux与react-toolkit的使用
 ## 2024-07-25
 1. 添加打包进度日志
 2. 支持sw打包后生成的文件名更新，避免cdn影响
