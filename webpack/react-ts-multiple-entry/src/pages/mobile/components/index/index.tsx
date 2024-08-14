@@ -10,6 +10,7 @@ interface Props {
 }
 interface State {
 }
+
 export default (props: Props) => {
 
   // 声明store相关
@@ -30,20 +31,11 @@ export default (props: Props) => {
     console.log('state', state)
   }, [state])
 
-  const [data, setData] = React.useState('asd')
-
-  React.useLayoutEffect(() => {
-    setData('aaaaa')
-  }, [])
-  // React.useEffect(() => {
-  //   setData('aaaaa')
-  // }, [])
   return <div className={cs.wrapper}>
     <Hello title={'hello111'}></Hello>
     <InstallPwa></InstallPwa>
     <div onClick={handleChangeSync}>handleChangeSync</div>
     <div onClick={handleChangeASync}>handleChangeASync</div>
-    <div>{data}</div>
   </div>
 }
 
