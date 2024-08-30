@@ -43,9 +43,9 @@ module.exports = class {
           }
 
           // 输出当前代理信息
-
           console.log('当前代理信息:')
           console.log(devServerProxy)
+          console.log('')
         }, 1000)
       }
     })

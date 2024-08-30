@@ -2,6 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { DefinePlugin, ProgressPlugin, CopyRspackPlugin } = require('@rspack/core');
 const CopyPlugin = CopyRspackPlugin
+const { GteFinishTime } = require('./plugins/index')
 const pagesConfig = require('./entrys')
 module.exports = {
     entry: pagesConfig.entries,
@@ -73,7 +74,8 @@ module.exports = {
         new ProgressPlugin((percentage, message, ...args) => {
             console.clear()
             console.info('构建进度：' + Math.round(percentage * 100) + '%');
-        })
+        }),
+        new GteFinishTime()
     ],
     resolve: {
         alias: {
