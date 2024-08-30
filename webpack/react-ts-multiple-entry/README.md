@@ -3,6 +3,8 @@ pnpm i
 npm run start
 
 # 更新日志
+## 2024-08-30
+1. 将webpack迁移到rspack
 ## 2024-08-12
 1. 引入纯的react-redux与react-toolkit的使用
 ## 2024-07-25
