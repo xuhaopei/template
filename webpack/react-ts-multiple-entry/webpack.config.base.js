@@ -1,6 +1,6 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { DefinePlugin, ProgressPlugin, CopyRspackPlugin } = require('@rspack/core');
+const { DefinePlugin, ProgressPlugin, CopyRspackPlugin } = require('@rspack/core')
 const CopyPlugin = CopyRspackPlugin
 const { GteFinishTime } = require('./plugins/index')
 const pagesConfig = require('./entrys')
@@ -8,10 +8,35 @@ module.exports = {
     entry: pagesConfig.entries,
     module: {
         rules: [
+            // {
+            //     test: /\.(js|jsx|ts|tsx)$/,
+            //     use: 'babel-loader',
+            //     exclude: /node_modules/ // 不编译node_modules下的文件
+            // },
             {
-                test: /\.(js|jsx|ts|tsx)$/,
-                use: 'babel-loader',
-                exclude: /node_modules/ // 不编译node_modules下的文件
+                test: /\.tsx?$/,
+                exclude: /node_modules/, // 不编译node_modules下的文件
+                use: {
+                    loader: 'builtin:swc-loader',
+                    options: {
+                        jsc: {
+                            parser: {
+                                syntax: 'typescript',
+                                tsx: true,
+                            },
+                            transform: {
+                                react: {
+                                    pragma: 'React.createElement',
+                                    pragmaFrag: 'React.Fragment',
+                                    throwIfNamespace: true,
+                                    development: false,
+                                    useBuiltins: false,
+                                },
+                            },
+                        },
+                    },
+                },
+                type: 'javascript/auto',
             },
             {
                 test: /\.css$/,
@@ -67,13 +92,13 @@ module.exports = {
         ...pagesConfig.htmlWebpackPlugins,
         new CopyPlugin({
             patterns: [
-              { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
-              { from: "root", to: "."}
+                { from: "public", to: "./public" }, // 将public里面的文件也打包进dist文件夹
+                { from: "root", to: "." }
             ],
         }),
         new ProgressPlugin((percentage, message, ...args) => {
             console.clear()
-            console.info('构建进度：' + Math.round(percentage * 100) + '%');
+            console.info('构建进度：' + Math.round(percentage * 100) + '%')
         }),
         new GteFinishTime()
     ],
